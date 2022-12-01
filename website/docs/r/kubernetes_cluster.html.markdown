@@ -257,23 +257,23 @@ resource "tencentcloud_kubernetes_cluster" "cluster_with_addon" {
   }
   extension_addon {
     name  = "OOMGuard"
-    param = "{\"kind\":\"OOMGuard\",\"apiVersion\":\"platform.tke/v1\",\"metadata\":{\"generateName\":\"oom\"},\"spec\":{}}"
+    param = "{\"kind\":\"App\",\"spec\":{\"chart\":{\"chartName\":\"oomguard\",\"chartVersion\":\"1.0.0\"}}}"
   }
   extension_addon {
     name  = "DNSAutoscaler"
-    param = "{\"kind\":\"DNSAutoscaler\",\"apiVersion\":\"platform.tke/v1\",\"metadata\":{\"generateName\":\"da\"},\"spec\":{}}"
+    param = "{\"kind\":\"App\",\"spec\":{\"chart\":{\"chartName\":\"dnsautoscaler\",\"chartVersion\":\"1.0.0\"}}}"
   }
   extension_addon {
     name  = "COS"
-    param = "{\"kind\":\"COS\",\"apiVersion\":\"platform.tke/v1\",\"metadata\":{\"generateName\":\"cos\"},\"spec\":{\"version\":\"1.0.0\"}}"
+    param = "{\"kind\":\"App\",\"spec\":{\"chart\":{\"chartName\":\"cos\",\"chartVersion\":\"1.0.2\"}}}"
   }
   extension_addon {
     name  = "CFS"
-    param = "{\"kind\":\"CFS\",\"apiVersion\":\"platform.tke/v1\",\"metadata\":{\"generateName\":\"cfs\"},\"spec\":{\"version\":\"1.0.0\"}}"
+    param = "{\"kind\":\"App\",\"spec\":{\"chart\":{\"chartName\":\"cfs\",\"chartVersion\":\"1.0.8\"}}}"
   }
   extension_addon {
     name  = "CBS"
-    param = "{\"kind\":\"CBS\",\"apiVersion\":\"platform.tke/v1\",\"metadata\":{\"generateName\":\"cbs\"},\"spec\":{}}"
+    param = "{\"kind\":\"App\",\"spec\":{\"chart\":{\"chartName\":\"cbs\",\"chartVersion\":\"1.0.9\"}}}"
   }
 }
 ```
